@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="Imagens/Escudo-Drogafuji.ico">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="container">
+         <div>
+            <a href="login.html">
+                <img src="imagens/Escudo-Drogafuji.png" alt="logo" class="logo-header">
+            </a>
+        </div>
+        <div class="container-login">
+            <div class="wrap-login">
+                <form class="login-form">
+                    <span>
+                        <img src="imagens/logo.png" class="logo-login"><br>
+                    </span>
+                    <span class="login-form-untitle">
+                        Dashboard Drogafuji<br><br>
+                    </span>
+                    <span class="login-form-title">
+                        Dashboard - Patrimônio
+                    </span><br>
+                    <span class="login-form-subtitle">
+                        Entre com o seu usuário e senha
+                    </span>
+
+                    <div>
+                        <br>
+                    </div>
+
+                    <div class="wrap-input margin-top-35 margin-bottom-35">
+                        <input class="input-form" type="text" name="email" autocomplete="off" />
+                        <span class="focus-input-form" data-placeholder="Usuário"></span>
+                    </div>
+
+                    <div>
+                        
+                    </div>
+
+                    <br><div class="wrap-input margin-top-35 margin-bottom-35">
+                        <input class="input-form" type="password" name="password" />
+                        <span class="focus-input-form" data-placeholder="Senha"></span>
+                    </div>
+
+
+
+                    <div class="container-login-form-btn">
+                        <br><button class="login-form-btn">Entrar</button><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<script>
+		let inputs = document.getElementsByClassName('input-form');
+		for (let input of inputs) {
+			input.addEventListener("blur", function() {
+				if(input.value.trim() != ""){
+					input.classList.add("has-val");
+				} else {
+					input.classList.remove("has-val");
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,510 @@
+/*
+    Variáveis
+*/
+
+:root{
+    --main-color: #F25C05;
+    --link-color: #252733;
+    --text1: #9FA2B4;
+    --highlight-text: #A4A6B3;
+    --input-text: #9FA2B4;
+    --white-color: #FFFFFF;
+    --black-color: #252733;
+    --point-list: #FFFFFF;
+    --line-input: #D9D9D9;
+    --menu-color: #252733;
+}
+
+/*
+    FONTES
+*/
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/Poppins-Regular.ttf')
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/Poppins-Medium.ttf')
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/Poppins-Bold.ttf')
+}
+
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url('../fonts/Poppins-SemiBold.ttf')
+}
+
+
+/*
+    ZERAR ESTILOS
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+ul, li {
+    margin: 0;
+    list-style-type: none;
+}
+
+input, button {
+    outline: none !important;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*
+    UTILITARIOS
+*/
+
+.text1{
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: var(--text1);
+    line-height: 1.5;
+}
+
+.text2{
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: var(--main-color);
+    line-height: 1.5;
+}
+
+.marginn-bottom-35 {
+    margin-bottom: 35px;
+}
+
+.marginn-top-35 {
+    margin-top: 35px;
+}
+
+.marginn-bottom-8 {
+    margin-bottom: 8px;
+}
+
+.marginn-top-8 {
+    margin-top: 8px;
+}
+
+.marginn-left-50 {
+    margin-top: 50px;
+}
+
+/*
+    LOGIN
+*/
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color:var(--menu-color);
+
+}
+
+.wrap-login {
+    width: 370px;
+    margin-right: 50px;
+    background-color: var(--white-color);
+    border-radius: 7px;
+    height: 500px;
+}
+
+.login-form {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.login-form-title {
+    display: black;
+    font-family: Poppins-SemiBold;
+    font-size: 22px;
+    color: var(--black-color);
+    line-height: 1.2;
+    text-align: center;
+    margin-left: 13.5%;
+}
+
+.login-form-subtitle {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    color: var(--input-text);
+    text-align: center;
+    margin-left: 19.5%;
+}
+
+.login-form-untitle {
+    font-family: Poppins-Regular;
+    font-size: 20px;
+    color: var(--input-text);
+    text-align: center;
+    margin-left: 21.6%;
+}
+
+.logo-login {
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 22%;
+    margin-bottom: -5px;
+}
+
+.logo-header {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+}
+
+/*
+    INPUT
+*/
+
+.wrap-input{
+    width: 85%;
+    position: relative;
+    border-bottom: 2px solid var(--line-input);
+    margin-left: 6.5%;
+}
+
+.input-form{
+    font-family: Poppins-Sembiold;
+    font-size: 18px;
+    color: var(--input-text);
+    display: block;
+    width: 100%;
+    height: 52px;
+    background: transparent;
+    padding: 0 5px;
+}
+
+.focus-input-form {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input-form::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background-color: var(--main-color);
+}
+
+.focus-input-form::after{
+    font-family: Poppins-Medium;
+    font-size: 18px;
+    color: var(--text1);
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    margin-top: 20px;
+    left: 0px;
+    padding: 5px;
+    transition: all 0.4s;
+}
+
+.input-form:focus + .focus-input-form::after{
+    top: -30px;
+    font-size: 15px;
+}
+
+.input-form:focus + .focus-input-form::before{
+    width: 100%;
+}
+
+.has-val.input-form + .focus-input-form::after{
+    top: -30px;
+    font-size: 15px;
+}
+
+.has-val.input-form + .focus-input-form::before{
+    width: 100%;
+}
+
+/*
+    BOTÃO
+*/
+
+.container-login-form-btn{
+    width:85%;
+    display: block;
+    justify-content: center;
+}
+
+.login-form-btn {
+    font-family: Poppins-Medium;
+    font-family: 16px;
+    color: var(--white-color);
+    line-height: 1.2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    transition: all 0.4s;
+    margin-left: 8%;
+}
+
+.login-form-btn:hover {
+    background-color: var(--highlight-text);
+}
+
+/*
+
+PAGINA DASHBOARD - MENU
+
+*/
+
+
+.left-menu {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #252733;
+    color: var(--input-text);
+}
+
+
+.logo-menu{
+    width: 175px;
+    height: 65px;
+    margin-left: 32px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#menu-lateral{
+    margin-left: 32px;
+    margin-bottom: 15px; 
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: var(--highlight-text)
+}
+
+a:hover{
+    color: var(--main-color);
+}
+
+#icone-menu{
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    margin-bottom: -4px;
+}
+
+#divisoria{
+    margin-bottom: 17px;
+}
+
+.painel{
+    margin-left: 250px;
+    font-family: Poppins-Semibold;
+    font-size: 25px;
+}
+
+.cabecalho-dashboard{
+    padding-top: 15px;
+    margin-left: 30px;
+    color: var(--black-color);
+    margin-bottom: 30px;
+}
+
+.memoramvip-img{
+    width: 250px;
+    height: 125px;
+    margin-bottom: 5px;
+}
+
+
+.memoramvip{
+    margin-left: 250px;
+    float: right;
+    margin-right: 1%;
+    position: relative;
+    top: -25em;
+}
+
+#tabela-cadastros{
+    color: var(--black-color);
+    font-size: 50px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+#cabeçalho-tabela{
+    width: 250px;
+    height: 125px;
+    font-size: 20px;
+    color: var(--highlight-text);
+    border: 0.5px;
+    border-color: #9FA2B4;
+    border-radius: 5px;
+    border-style: double;
+}
+
+.dado-painel{
+    font-size: 40px;
+    color: #252733;
+    font-family: Poppins-Bold;
+}
+
+.grafico-principal{
+    margin-left: 300px;
+    margin-top: 50px;
+    width: 785px;    
+}
+
+/*
+
+PAGINA CADASTROS - FORMULÁRIO
+
+*/
+
+.form-cadastro{
+    margin-left: 300px;
+    width: 40%;
+    border: 3px;
+    border-style:outset;
+    border-color: #A4A6B3;
+    height: 85%;
+}
+
+.formulario-cadastro{
+    text-align: center;
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.form-cadastro-button{
+    background-color: #F25C05;
+    color: var(--white-color);
+    border-style: outset;
+    height: 35px;
+    width: 100px;
+    font-family: Poppins-Regular;
+    font-size: 17px;
+    text-align: center;
+    margin: 15px;
+}
+
+.form-cadastro-select{
+    background-color: #252733;
+    color: var(--white-color);
+    border-style: outset;
+    height: 35px;
+    width: 500px;
+    font-family: Poppins-Regular;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.form-cadastro-input{
+    border: 2px;
+    border-style: outset;
+    height: 35px;
+    width: 500px;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-top: -3px;
+}
+
+.form-cadastro-dinput{
+    border: 2px;
+    border-style: outset;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-top: -3px;
+}
+
+.cabecalho-cadastros{
+    padding-top: 15px;
+    margin-left: 250px;
+    padding-left: 30px;
+    color: var(--black-color);
+    font-family: Poppins-Semibold;
+    font-size: 25px;
+}
+
+
+/*
+Página de relatório
+*/
+
+.relatorio {
+    padding-top: 15px;
+    margin-left: 250px;
+    padding-left: 30px;
+    color: var(--black-color);
+    font-family: Poppins-Semibold;
+    width: 70%;
+}
+
+th {
+    font-size: 20px;
+    font-family: Poppins-Semibold;
+}
+
+td {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+}
+
+
+/*
+Tela de consulta
+*/
+
+.consultatab {
+    margin-left:250px;
+}
